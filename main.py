@@ -22,7 +22,7 @@ for i in range(len(protein)):
         continue
     corrected_protein=corrected_protein+protein[i]
 print('Corrected protein sequence is: %s' %corrected_protein)
-        #print('protein contains invalid amino acid %s at position %d' %(protein[i], i))'''
+        #print('protein contains invalid amino acid %s at position %d' %(protein[i], i))
 
 
 #This algorithm computes GC percentage
@@ -32,9 +32,20 @@ def gc(dna):
     gc_percentage = float(dna.count('c') + dna.count('g')) * 100/(len(dna)-nbases)
     return gc_percentage
 
-gc('ctttggtttctactcgccggcagcgtcccatctgtgcacttgccatcgaa')
+gc('ctttggtttctactcgccggcagcgtcccatctgtgcacttgccatcgaa')'''
 
+#checking stop codons in dna sequence
+def has_stop_codon(dna):
+    stop_codon_found = False
+    stop_codons=['tga', 'tag', 'taa']
+    for i in range(0, len(dna), 3):
+        codon = dna[i:i+3].lower()
+        if codon in stop_codons:
+            stop_codon_found=True
+            break
+    return stop_codon_found
 
+has_stop_codon('acgacctatgatgtggacagtcaacaaggcttctcagaaggctattcaat')
 
 
 
