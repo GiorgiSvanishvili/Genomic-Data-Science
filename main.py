@@ -1,5 +1,5 @@
 #with this loops we can find undefined bases in sequence
-'''dna = input('Enter you DNA: ')
+'''dna = input('Enter your DNA: ')
 
 if 'n' in dna:
     nbases = dna.count('n')
@@ -12,7 +12,7 @@ pos = dna.find('gt',0)
 
 while pos>-1:
     print("Donor splice site candidate at position %d" %pos)
-    pos = dna.find('gt', pos + 1)'''
+    pos = dna.find('gt', pos + 1)
 
 #this algorithm tells us invalid amino acids with theirs' positions in protein and deletes them.
 protein = 'BHGHKHNMIJUMJQRCACZVDOSLMIASBQBTBZB' #<--random letters
@@ -22,6 +22,21 @@ for i in range(len(protein)):
         continue
     corrected_protein=corrected_protein+protein[i]
 print('Corrected protein sequence is: %s' %corrected_protein)
-        #print('protein contains invalid amino acid %s at position %d' %(protein[i], i))
+        #print('protein contains invalid amino acid %s at position %d' %(protein[i], i))'''
+
+
+#This algorithm computes GC percentage
+#In molecular biology and genetics, GC-content is the percentage of nitrogenous bases in a DNA or RNA molecule that are either guanine or cytosine. 
+def gc(dna):
+    nbases = dna.count('n')
+    gc_percentage = float(dna.count('c') + dna.count('g')) * 100/(len(dna)-nbases)
+    return gc_percentage
+
+gc('ctttggtttctactcgccggcagcgtcccatctgtgcacttgccatcgaa')
+
+
+
+
+
     
     
