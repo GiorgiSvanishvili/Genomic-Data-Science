@@ -32,7 +32,7 @@ def gc(dna):
     gc_percentage = float(dna.count('c') + dna.count('g')) * 100/(len(dna)-nbases)
     return gc_percentage
 
-gc('ctttggtttctactcgccggcagcgtcccatctgtgcacttgccatcgaa')'''
+gc('ctttggtttctactcgccggcagcgtcccatctgtgcacttgccatcgaa')
 
 #checking stop codons in dna sequence
 def has_stop_codon(dna):
@@ -47,7 +47,27 @@ def has_stop_codon(dna):
 
 has_stop_codon('acgacctatgatgtggacagtcaacaaggcttctcagaaggctattcaat')
 
+#complementing DNA sequence
+def complement(dna):
+    basecomplement = {'A':'T', 'C':'G', 'G':'C', 'T':'A', 'N':'N', 'a':'t', 'c':'g', 'g':'c', 't':'a', 'n':'n'}
+    letters = list(dna)
+    letters = [basecomplement[base] for base in letters]
+    return ''.join(letters)
+dna('ctttggtttctactcgccggcagcgtcccatctgtgcacttgccatcgaa')'''
 
+def recursion(n):
+    if n < 0:
+        return -1
+    else:
+        fact = 1
+        for i in range(1, n+1):
+            fact *=i
+        return fact
+print(recursion(3))
+
+
+
+    
 
     
     
